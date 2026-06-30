@@ -122,6 +122,16 @@ scripts\run_realtime_preview.bat
 - **Arduino Leonardo** / **Pro Micro (ATmega32U4)** / 兼容板
 - USB 数据线
 
+#### 购买渠道
+
+开发板可以在各大网购平台购买，价格非常实惠（约 **30 元左右**）：
+
+- 🛒 **淘宝** - 搜索"Arduino Leonardo"或"Pro Micro"
+- 🛒 **拼多多** - 搜索"Leonardo R3 开发板"，性价比更高
+- 🛒 **京东** - 搜索"Arduino Leonardo"，品质有保障
+
+**推荐型号**：Leonardo R3 开发板（基于 ATMEGA32U4 芯片）
+
 #### 固件烧录
 
 1. 打开 Arduino IDE，加载 `firmware/leonardo_mouse_hid/leonardo_mouse_hid.ino`
