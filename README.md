@@ -3,7 +3,7 @@
 <div align="center">
   <img src="assets/app_icon.png" alt="VisionForge Logo" width="128" height="128">
   <h1>⚡ VisionForge</h1>
-  <p>AI 目标检测与实时推理引擎</p>
+  <p>AI 自瞄吸附 · 自动扳机 · 射击辅助工具</p>
   
   [![GitHub Stars](https://img.shields.io/github/stars/SuperZhao666/VisionForge?style=social)](https://github.com/SuperZhao666/VisionForge)
   [![GitHub License](https://img.shields.io/github/license/SuperZhao666/VisionForge)](LICENSE)
@@ -18,7 +18,9 @@
 
 ## 📋 项目简介
 
-VisionForge 是一款基于 Python 的 AI 目标检测与实时推理引擎，采用 YOLO 模型进行目标识别，支持毫秒级推理速度（单帧推理时间低于 1 毫秒）。项目旨在提供一个开放的技术研究平台，用于探讨计算机视觉、目标跟踪和实时推理等前沿技术。
+VisionForge 是一款基于 Python 的 **AI 自瞄吸附与自动扳机射击辅助工具**，采用 YOLO 模型进行目标识别，支持毫秒级推理速度（单帧推理时间低于 1 毫秒）。通过硬件级鼠标控制（Arduino Leonardo），实现自动瞄准、自动扳机、目标跟踪等功能。
+
+**⚠️ 重要声明**：本项目仅供技术研究和学习交流使用，严禁用于任何违法违规行为（如破坏游戏公平性、违反游戏服务条款等）。作者不承担任何因滥用本项目而产生的法律责任。
 
 ### 🎯 核心功能
 
