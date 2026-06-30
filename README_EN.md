@@ -22,7 +22,11 @@
 
 VisionForge is a **AI Auto Aim & Auto Trigger Shooting Assistant** built with Python, using YOLO models for target detection with millisecond-level inference speed (single frame inference time < 1ms). Through hardware-level mouse control (Arduino Leonardo), it achieves auto aim, auto trigger, target tracking, and more.
 
-📺 **Demo Videos**:
+### 🎬 Demo Video
+
+<video src="assets/demo.mp4" width="800" controls autoplay loop muted></video>
+
+📺 **More Demo Videos**:
 - [VisionForge Valorant AI Game Assistant - Long-term Stable Version](https://b23.tv/6I90Dpq) (Bilibili)
 - [VisionForge High-end AI Game Assistant Tool](https://v.douyin.com/qcqneULylOs/) (Douyin/TikTok)
 

@@ -22,7 +22,11 @@
 
 VisionForge 是一款基于 Python 的 **AI 自瞄吸附与自动扳机射击辅助工具**，采用 YOLO 模型进行目标识别，支持毫秒级推理速度（单帧推理时间低于 1 毫秒）。通过硬件级鼠标控制（Arduino Leonardo），实现自动瞄准、自动扳机、目标跟踪等功能。
 
-📺 **项目演示视频**：
+### 🎬 项目演示
+
+<video src="assets/demo.mp4" width="800" controls autoplay loop muted></video>
+
+📺 **更多演示视频**：
 - [【VisionForge视铸科技 瓦罗兰野 AI游戏手感优化工具 长期稳定版】- 哔哩哔哩](https://b23.tv/6I90Dpq)
 - [【VisionForge视铸科技最新推出的高端AI游戏辅助工具】- 抖音](https://v.douyin.com/qcqneULylOs/)
 
