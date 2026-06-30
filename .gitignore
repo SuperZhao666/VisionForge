@@ -1,0 +1,15 @@
+.venv/
+dist/
+dist_nuitka/
+build/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+crash_*.txt
+keys/*.key
+# Production private keys must not be committed or distributed to users.
+owner_secrets/
+# Internal documentation and build guides
+docs/
+runtime_dlls/*.dll

@@ -1,0 +1,152 @@
+run_mode: runtime
+benchmark_frames: 0
+control_enabled: true
+roi_width: 600
+roi_height: 600
+target_fps: 144
+leonardo_port: auto
+leonardo_baud: 115200
+
+# ===== 颜色过滤 =====
+color_lower: [138, 80, 105]
+color_upper: [162, 255, 255]
+
+# ===== 轮廓尺寸过滤 =====
+min_contour_area: 80      
+max_contour_area: 10000
+filter_max_width: 100      # 绝对拦截！任何宽度超过100的一律视为光球/大烟雾
+filter_max_height: 180     # 绝对拦截！光球高度通常在150以上
+filter_min_height: 15      
+close_target_rescue_enabled: true
+close_target_center_zone_radius: 80
+close_target_max_area_ratio: 0.35
+max_head_estimation_candidates: 8
+
+# ===== 形态学 =====
+morph_kernel_width: 9
+morph_kernel_height: 17
+morph_iterations: 1
+
+# ===== 几何特征过滤 =====
+filter_solidity_max: 1.0
+filter_solidity_min: 0.05        
+filter_extent_max: 1.0
+filter_aspect_min: 0.1           
+filter_circularity_max: 0.65     
+filter_rectangularity_min: 0.12  
+
+
+# ===== 反烟雾 =====
+edge_margin: 2
+anti_smoke_max_area_ratio: 20.0
+anti_smoke_min_area: 8000   # 必须低于 max_contour_area，否则反烟雾逻辑不可达
+
+# ===== 时序追踪 =====
+temporal_min_hits: 1
+temporal_max_lost: 10
+spatial_distance_limit: 500
+direction_change_guard_enabled: true
+direction_change_threshold: -0.2
+direction_change_min_speed: 30.0
+direction_change_bypass_dist: 120.0
+area_priority_ratio: 1.8
+
+# ===== 移动控制 =====
+dead_zone: 2.5              # 增大死区！误差在2.5像素内不移动，消除末端高频微震
+max_move: 127
+sensitivity_scaler: 0.55    # 降低全局灵敏度！防止冲过头导致来回拉扯
+sensitivity_boost_close: 1.1
+close_range_threshold: 100
+min_kinetic_speed: 1.0
+ego_scaler: 2.7
+
+# ===== OpenCV 头部 / 上部目标点估计 =====
+# 这些参数只影响目标点估计，不改变颜色检测、模型过滤、追踪、样本采集等功能。
+# upright：正身/背面/瘦高目标；wide：侧身/下蹲/横向动作目标。
+head_search_ratio: 0.38          # 普通姿态：搜索 bbox 顶部 38%
+head_search_ratio_wide: 0.48     # 宽姿态/下蹲：扩大搜索区，避免只看头顶一小片
+head_min_search_px: 8            # 小目标最少搜索高度
+head_row_min_pixels: 2           # 有效行最少白色像素
+head_row_min_density: 0.08       # 有效行最小密度，越大越抗噪，越小越保守
+head_row_gap_tolerance: 2        # 有效行断裂容忍
+head_row_weight_power: 1.35      # 行宽权重，越大越偏向主体宽行
+head_vertical_decay: 0.018       # 越大越偏向上方行，防止被肩胸拖低
+head_y_band_position: 0.42       # 在选中行带内部取偏上的位置
+head_offset_y_ratio: -0.06       # 按目标高度自适应上移
+head_offset_y_min: -2            # 小目标至少/至多偏移夹逼边界之一
+head_offset_y_max: -10           # 大目标至少/至多偏移夹逼边界之一
+head_wide_width_ratio_threshold: 0.75  # w/h 超过此值时按 wide 姿态处理
+head_wide_offset_scale: 0.65     # 宽姿态减少上移，避免侧身/下蹲打到头顶空气
+show_head_roi: true              # debug 显示头部搜索区
+show_aim_point: true             # debug 显示原始头点/最终目标点
+targeting_offset_x: -1           # 手动微调：整体左右偏移
+targeting_offset_y: 0            # 手动微调：整体上下偏移，优先调 head_offset_y_ratio
+aim_key: '0xA0'
+
+# ===== 开火 =====
+trigger_enabled: true
+trigger_tolerance: 3.0
+trigger_delay_first_shot: 0.040
+trigger_burst_interval: 0.088
+trigger_max_velocity_px_per_frame: 10.0
+ignore_falling_speed_px_per_frame: 14.0
+burst_shots_limit: 2
+burst_cooldown: 0.35
+rcs_pull_down_pixels: 6
+
+# ===== 卡尔曼 =====
+kalman_process_noise: 0.06
+kalman_measurement_noise: 0.20 # 提高测量噪声，让卡尔曼更平滑地信任检测结果
+
+# ===== 显示 =====
+show_debug: false
+show_target_info: true
+show_prediction_vector: true
+debug_show_mask: false
+debug_draw_stride: 2
+debug_max_draw_candidates: 12
+prediction_vector_dt: 0.04
+
+# ===== 运动检测 =====
+motion_enabled: false
+motion_diff_threshold: 10
+motion_dilate_kernel: 5
+
+# ===== 静态过滤 =====
+static_filter_enabled: false
+static_max_frames: 20
+static_pos_threshold: 3.0
+static_area_change_ratio: 0.08
+
+# ===== 动态偏移 =====
+dynamic_offset_enabled: true
+dynamic_offset_near_y: 0
+dynamic_offset_far_y: -2      # 自适应头部偏移已负责主要上移，远距动态偏移不宜过大
+dynamic_offset_near_dist: 50
+dynamic_offset_far_dist: 300
+
+# ===== 模型 =====
+model_path: "fire_model.onnx"
+img_size: 48
+model_input_channels: 4   # 1=旧mask-only；3=RGB；4=RGB+mask（推荐）
+fire_threshold: 0.7
+model_filter_threshold: 0.5
+model_filter_consecutive: 2
+model_filter_cache_ttl: 0.05
+model_filter_reject_radius: 40.0
+model_inference_in_main: true
+
+# ===== 训练 =====
+learning_enabled: true
+focal_loss_gamma: 2.0
+augment_training_data: true
+quantize_onnx: false
+auto_save_hard_negatives: true
+
+# ===== 自动训练与热加载 =====
+auto_train_enabled: false
+train_sample_threshold: 50
+train_check_interval: 30
+max_samples_per_class: 5000
+train_epochs: 10
+train_batch_size: 32

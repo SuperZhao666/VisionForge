@@ -1,0 +1,5 @@
+nuitka>=2.5.0
+ordered-set>=4.1.0
+zstandard>=0.22.0
+# Optional stronger obfuscation pipeline if the local build agent has a valid license:
+# pyarmor>=9.0.0
