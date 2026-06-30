@@ -3,7 +3,7 @@
 <div align="center">
   <img src="assets/app_icon.png" alt="VisionForge Logo" width="128" height="128">
   <h1>⚡ VisionForge</h1>
-  <p>下一代 GPU 加速计算机视觉框架</p>
+  <p>AI 目标检测与实时推理引擎</p>
   
   [![GitHub Stars](https://img.shields.io/github/stars/SuperZhao666/VisionForge?style=social)](https://github.com/SuperZhao666/VisionForge)
   [![GitHub License](https://img.shields.io/github/license/SuperZhao666/VisionForge)](LICENSE)
@@ -18,18 +18,20 @@
 
 ## 📋 项目简介
 
-VisionForge 是一款基于 Python 的高性能计算机视觉框架，集成了先进的目标检测、跟踪和控制算法。项目采用模块化设计，支持 GPU 加速推理，提供流畅的实时处理体验。
+VisionForge 是一款基于 Python 的 AI 目标检测与实时推理引擎，采用 YOLO 模型进行目标识别，支持毫秒级推理速度。项目旨在提供一个开放的技术研究平台，用于探讨计算机视觉、目标跟踪和实时推理等前沿技术。
+
+**⚠️ 重要声明**：本项目仅供技术研究和学习交流使用，严禁用于任何违法违规行为。作者不承担任何因滥用本项目而产生的法律责任。
 
 ### ✨ 核心特性
 
-- **🚀 高性能推理**：基于 ONNX Runtime，支持 TensorRT/CUDA/CPU 多后端加速
-- **🎯 精准目标检测**：YOLO 模型集成，支持多种目标类别识别
-- **🔄 智能跟踪算法**：EKF/Kalman 滤波，实现平滑稳定的目标跟踪
-- **⚡ 实时控制**：支持 Leonardo 硬件控制器，实现低延迟控制
-- **🖥️ 原生 GUI**：Windows 原生桌面应用，中文友好界面
-- **🛠️ 参数调优**：可视化参数调整器，实时预览效果
-- **📊 环境诊断**：自动检测 CUDA/cuDNN/TensorRT 环境配置
-- **🔒 安全设计**：模块化架构，易于扩展和维护
+- **🚀 毫秒级推理**：基于 ONNX Runtime，支持 TensorRT/CUDA/CPU 多后端加速，单帧推理时间低于 1 毫秒
+- **🎯 精准目标检测**：YOLO 模型集成，支持多种目标类别识别与定位
+- **🔄 智能跟踪算法**：EKF/Kalman 滤波，实现平滑稳定的目标跟踪与锁定
+- **⚡ 实时控制**：支持 Leonardo 硬件控制器，实现低延迟实时控制
+- **🖥️ 原生 GUI**：Windows 原生桌面应用，中文友好界面，参数可视化调整
+- **🛠️ 参数调优**：可视化参数调整器，实时预览推理效果
+- **📊 环境诊断**：自动检测 CUDA/cuDNN/TensorRT 环境配置与兼容性
+- **🔒 模块化设计**：清晰的架构设计，易于扩展和二次开发
 
 ### 📁 项目结构
 
