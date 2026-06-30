@@ -12,6 +12,8 @@
   
   [![QQ Group](https://img.shields.io/badge/QQ%20Group-1044257667-blue)](https://qm.qq.com/cgi-bin/qm/qr?k=U97K77g4eE9pU97K77g4eE9p&jump_from=webapi)
   [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/+OdV-iEskI1MzNDll)
+  
+  **中文** | [English](README_EN.md)
 </div>
 
 ---
