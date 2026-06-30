@@ -24,7 +24,9 @@ VisionForge 是一款基于 Python 的 **AI 自瞄吸附与自动扳机射击辅
 
 ### 🎬 项目演示
 
-<video src="assets/demo.mp4" width="800" controls autoplay loop muted></video>
+https://github.com/SuperZhao666/VisionForge/assets/assets/demo.mp4
+
+<video src="https://raw.githubusercontent.com/SuperZhao666/VisionForge/main/assets/demo.mp4" width="800" controls autoplay loop muted></video>
 
 📺 **更多演示视频**：
 - [【VisionForge视铸科技 瓦罗兰野 AI游戏手感优化工具 长期稳定版】- 哔哩哔哩](https://b23.tv/6I90Dpq)

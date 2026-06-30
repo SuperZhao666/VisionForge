@@ -24,7 +24,9 @@ VisionForge is a **AI Auto Aim & Auto Trigger Shooting Assistant** built with Py
 
 ### 🎬 Demo Video
 
-<video src="assets/demo.mp4" width="800" controls autoplay loop muted></video>
+https://github.com/SuperZhao666/VisionForge/assets/assets/demo.mp4
+
+<video src="https://raw.githubusercontent.com/SuperZhao666/VisionForge/main/assets/demo.mp4" width="800" controls autoplay loop muted></video>
 
 📺 **More Demo Videos**:
 - [VisionForge Valorant AI Game Assistant - Long-term Stable Version](https://b23.tv/6I90Dpq) (Bilibili)
