@@ -71,10 +71,76 @@ VisionForge/
 
 ### 🔧 环境要求
 
-- Windows 10/11 (64-bit)
-- Python 3.10+
-- NVIDIA GPU (推荐，支持 TensorRT/CUDA)
-- CUDA 12.x + cuDNN 9.x (可选，GPU 加速)
+- **操作系统**：Windows 10/11 (64-bit)
+- **Python**：3.10+
+- **NVIDIA GPU**（推荐，支持 TensorRT/CUDA 加速）
+- **CUDA**：12.x + cuDNN 9.x（GPU 加速必需）
+
+### 📋 测试环境
+
+本项目仅在以下环境进行过测试验证：
+
+| 项目 | 版本/型号 |
+|------|-----------|
+| 操作系统 | Windows 11 专业版 (10.0.26100) |
+| GPU | NVIDIA GeForce RTX 3050 (4GB) |
+| NVIDIA 驱动 | 591.74 |
+| CUDA | 13.1 |
+| Python | 3.10+ |
+
+> ⚠️ **注意**：以上为开发者测试环境，其他配置可能存在兼容性问题，欢迎反馈测试结果！
+
+### 🛠️ 驱动安装
+
+要使用 GPU 加速功能，需要安装以下依赖：
+
+#### 1. NVIDIA 显卡驱动
+
+从 [NVIDIA 官网](https://www.nvidia.com/Download/index.aspx) 下载并安装最新驱动，或使用 GeForce Experience 自动更新。
+
+#### 2. CUDA Toolkit
+
+下载地址：[CUDA Toolkit 12.x](https://developer.nvidia.com/cuda-toolkit-archive)
+
+安装步骤：
+1. 下载对应版本的 CUDA Toolkit（推荐 12.1 或 12.2）
+2. 运行安装程序，选择"Custom"安装
+3. 确保勾选"CUDA Runtime"、"CUDA Samples"等组件
+4. 安装完成后，确认系统环境变量 `CUDA_PATH` 已设置
+
+#### 3. cuDNN
+
+下载地址：[cuDNN Archive](https://developer.nvidia.com/rdp/cudnn-archive)
+
+安装步骤：
+1. 下载与 CUDA 版本匹配的 cuDNN（如 CUDA 12.1 对应 cuDNN 9.x）
+2. 解压压缩包
+3. 将解压后的 `bin`、`include`、`lib` 目录下的文件复制到 CUDA 安装目录对应文件夹中
+   - `bin/*.dll` → `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.x\bin\`
+   - `include/*.h` → `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.x\include\`
+   - `lib/x64/*.lib` → `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.x\lib\x64\`
+
+#### 4. TensorRT（可选，推荐）
+
+下载地址：[TensorRT](https://developer.nvidia.com/tensorrt)
+
+安装步骤：
+1. 下载与 CUDA/cuDNN 版本匹配的 TensorRT
+2. 解压压缩包
+3. 将 `lib` 目录添加到系统环境变量 `PATH` 中
+
+#### 5. ONNX Runtime GPU
+
+项目依赖 `onnxruntime-gpu`，安装命令：
+
+```bash
+pip install onnxruntime-gpu==1.20.1
+```
+
+> 💡 **提示**：如果安装失败或 GPU 不可用，可改用 CPU 版本：
+> ```bash
+> pip install onnxruntime==1.20.1
+> ```
 
 ### 📥 安装步骤
 
